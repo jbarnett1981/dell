@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}} - {{today}}</title>
+</head>
+<body>
+    <style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 30%;
+    border-collapse: collapse;
+}
+
+#customers td, #customers th {
+    font-size: 1em;
+    border: 1px solid #000000;
+    padding: 3px 7px 2px 7px;
+}
+
+#customers th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #2E64FE;
+    color: #ffffff;
+}
+
+#customers tr.alt td {
+    color: #000000;
+    background-color: #A9D0F5;
+}
+</style>
+</head>
+<body>
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Serial No</th>
+    <th>Server Model</th>
+    <th>Warranty End Date</th>
+  </tr>
+  {% for item in items %}
+  <tr class="{{ loop.cycle('alt', 'normal') }}">
+    <td>{{item.name}}</td>
+    <td>{{item.serial_no}}</td>
+    <td>{{item.server_model}}</td>
+    <td>{{item.date.strftime('%m-%d-%Y')}}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

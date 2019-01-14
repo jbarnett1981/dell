@@ -1,0 +1,7 @@
+{"racktables": {
+        "server": "racktables.example.lan",
+        "db_user": "USERNAME",
+        "db_pass": "PASSWORD",
+        "db": "racktables_db"
+    }
+}
